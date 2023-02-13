@@ -15,8 +15,32 @@
         <script src="script.js"></script>
       </div>
       <div class="col2">
-        <input type="number" id="xVal">
-        <input type="number" id="yVal">
+        <label for="xVal">Choose the x-coordinate you'd like to add:</label>
+        <select id="xVal">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+        <br />
+        <label for="yVal">Choose the y-coordinate you'd like to add:</label>
+        <select id="yVal">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+        <br />
         <button onclick="addPoint()">Add Point</button>
         <p id="addPointMsg"></p>
       </div>
@@ -36,9 +60,8 @@
       <li>
         https://stackoverflow.com/questions/27169375/how-to-update-bound-data-in-d3-js
       </li>
-      <li>
-        https://gist.github.com/jfreels/6810705
-      </li>
+      <li>https://gist.github.com/jfreels/6810705</li>
+      <li>https://www.w3schools.com/tags/tag_select.asp</li>
     </ul>
   </body>
 </html>
