@@ -76,6 +76,18 @@ function onClickCircle2() {
     circle2.style.stroke = "green";
     circle2.style.strokeWidth = 3;
   }
+
+  let pointMsg = document.getElementById("lastPointClicked").innerHTML;
+  let coord = "(2, 4)";
+  if (!isClicked) {
+    isClicked = true;
+    document.getElementById("lastPointClicked").innerHTML = pointMsg + coord;
+  } else {
+    isClicked = false;
+    console.log("unclicking");
+    let substring = pointMsg.substring(0, pointMsg.length - 6);
+    document.getElementById("lastPointClicked").innerHTML = substring;
+  }
 }
 
 function onClickCircle3() {
@@ -87,6 +99,18 @@ function onClickCircle3() {
     circle3.style.stroke = "green";
     circle3.style.strokeWidth = 3;
   }
+
+  let pointMsg = document.getElementById("lastPointClicked").innerHTML;
+  let coord = "(6, 2)";
+  if (!isClicked) {
+    isClicked = true;
+    document.getElementById("lastPointClicked").innerHTML = pointMsg + coord;
+  } else {
+    isClicked = false;
+    console.log("unclicking");
+    let substring = pointMsg.substring(0, pointMsg.length - 6);
+    document.getElementById("lastPointClicked").innerHTML = substring;
+  }
 }
 
 function onClickCircle4() {
@@ -97,5 +121,17 @@ function onClickCircle4() {
   } else {
     circle4.style.stroke = "green";
     circle4.style.strokeWidth = 3;
+  }
+
+  let pointMsg = document.getElementById("lastPointClicked").innerHTML;
+  let coord = "(9, 9)";
+  if (!isClicked) {
+    isClicked = true;
+    document.getElementById("lastPointClicked").innerHTML = pointMsg + coord;
+  } else {
+    isClicked = false;
+    console.log("unclicking");
+    let substring = pointMsg.substring(0, pointMsg.length - 6);
+    document.getElementById("lastPointClicked").innerHTML = substring;
   }
 }
