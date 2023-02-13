@@ -1,131 +1,101 @@
-let dataset1 = [
-  [1, 2],
-  [2, 4],
-  [6, 2],
-  [9, 9],
-];
+// on mouse over and mouse out functions
 
-let svg = d3.select("svg"),
-  margin = 200,
-  width = svg.attr("width") - margin,
-  height = svg.attr("height") - margin;
-
-let xScale = d3.scaleLinear().domain([0, 10]).range([0, width]),
-  yScale = d3.scaleLinear().domain([0, 10]).range([height, 0]);
-
-let g = svg.append("g").attr("transform", "translate(" + 100 + "," + 100 + ")");
-
-// Step 5
-
-g.append("g")
-  .attr("transform", "translate(0," + height + ")")
-  .call(d3.axisBottom(xScale));
-
-g.append("g").call(d3.axisLeft(yScale));
-
-let showBorderArr = new Array(dataset1.length).fill(true);
-
-function findIndexInArray(givenArray, object) {
-  for (let i = 0; i < givenArray.length; i++) {
-    if (givenArray[i][0] == object[0] && givenArray[i][1] == object[1]) {
-      return i;
-    }
-  }
-  return -1;
+function mouseOverCircle1() {
+  let circle1 = document.getElementById("circle1");
+  circle1.style.fill = "blue";
 }
 
-svg
-  .append("g")
-  .selectAll("dot")
-  .data(dataset1)
-  .enter()
-  .append("circle")
-  .attr("cx", function (d) {
-    return xScale(d[0]);
-  })
-  .attr("cy", function (d) {
-    return yScale(d[1]);
-  })
-  .attr("r", 10)
-  .attr("transform", "translate(" + 100 + "," + 100 + ")")
-  .style("fill", "green")
-  .on("mouseover", function (d) {
-    d3.select(this).attr("r", 10).style("fill", "blue");
-  })
-  .on("mouseout", function (d) {
-    d3.select(this).attr("r", 10).style("fill", "green");
-  })
-  .on("click", function (d) {
-    d3.select(".col2")
-      .append("text")
-      .text(d + " ");
+function mouseOutCircle1() {
+  let circle1 = document.getElementById("circle1");
+  circle1.style.fill = "pink";
+}
 
-    showBorderIndex = findIndexInArray(dataset1, d);
+function mouseOverCircle2() {
+  let circle2 = document.getElementById("circle2");
+  circle2.style.fill = "blue";
+}
 
-    showBorder = showBorderArr[showBorderIndex];
+function mouseOutCircle2() {
+  let circle2 = document.getElementById("circle2");
+  circle2.style.fill = "pink";
+}
 
-    showBorderArr[showBorderIndex] = showBorder == true ? false : true;
+function mouseOverCircle3() {
+  let circle3 = document.getElementById("circle3");
+  circle3.style.fill = "blue";
+}
 
-    if (!showBorderArr[showBorderIndex]) {
-      d3.select(this).attr("stroke", "#FF69B4").attr("stroke-width", 2);
-    } else {
-      d3.select(this).attr("stroke", "#green").attr("stroke-width", 2);
-    }
-  });
+function mouseOutCircle3() {
+  let circle3 = document.getElementById("circle3");
+  circle3.style.fill = "pink";
+}
 
-function addPoint() {
-  x = Number(document.getElementById("xVal").value);
-  y = Number(document.getElementById("yVal").value);
-  if (x < 1 || x > 9 || y < 1 || y > 9) {
-    document.getElementById("addPointMsg").innerHTML =
-      "X and Y value must be within 1 and 9";
-  } else if (findIndexInArray(dataset1, [x, y]) != -1) {
-    document.getElementById("addPointMsg").innerHTML = "Point Already Added";
+function mouseOverCircle4() {
+  let circle4 = document.getElementById("circle4");
+  circle4.style.fill = "blue";
+}
+
+function mouseOutCircle4() {
+  let circle4 = document.getElementById("circle4");
+  circle4.style.fill = "pink";
+}
+
+// on click functions
+
+let isClicked = false;
+
+function onClickCircle1() {
+  let circle1 = document.getElementById("circle1");
+  if (circle1.style.stroke === "green") {
+    circle1.style.stroke = "pink";
+    circle1.style.strokeWidth = 0;
   } else {
-    dataset1.push([x, y]);
-    showBorderArr.push(true);
+    circle1.style.stroke = "green";
+    circle1.style.strokeWidth = 3;
+  }
 
-    console.log(dataset1);
+  let pointMsg = document.getElementById("lastPointClicked").innerHTML;
+  let coord = "(1, 2)";
+  if (!isClicked) {
+    isClicked = true;
+    document.getElementById("lastPointClicked").innerHTML = pointMsg + coord;
+  } else {
+    isClicked = false;
+    console.log("unclicking");
+    let substring = pointMsg.substring(0, pointMsg.length - 6);
+    document.getElementById("lastPointClicked").innerHTML = substring;
+  }
+}
 
-    svg
-      .append("g")
-      .selectAll("dot")
-      .data(dataset1)
-      .enter()
-      .append("circle")
-      .attr("cx", function (d) {
-        return xScale(d[0]);
-      })
-      .attr("cy", function (d) {
-        return yScale(d[1]);
-      })
-      .attr("r", 10)
-      .attr("transform", "translate(" + 100 + "," + 100 + ")")
-      .style("fill", "green")
-      .on("mouseover", function (d) {
-        d3.select(this).attr("r", 10).style("fill", "blue");
-      })
-      .on("mouseout", function (d) {
-        d3.select(this).attr("r", 10).style("fill", "green");
-      })
-      .on("click", function (d) {
-        d3.select(".col2")
-          .append("text")
-          .text(d + " ");
+function onClickCircle2() {
+  let circle2 = document.getElementById("circle2");
+  if (circle2.style.stroke === "green") {
+    circle2.style.stroke = "pink";
+    circle2.style.strokeWidth = 0;
+  } else {
+    circle2.style.stroke = "green";
+    circle2.style.strokeWidth = 3;
+  }
+}
 
-        showBorderIndex = findIndexInArray(dataset1, d);
+function onClickCircle3() {
+  let circle3 = document.getElementById("circle3");
+  if (circle3.style.stroke === "green") {
+    circle3.style.stroke = "pink";
+    circle3.style.strokeWidth = 0;
+  } else {
+    circle3.style.stroke = "green";
+    circle3.style.strokeWidth = 3;
+  }
+}
 
-        showBorder = showBorderArr[showBorderIndex];
-
-        showBorderArr[showBorderIndex] = showBorder == true ? false : true;
-
-        if (!showBorderArr[showBorderIndex]) {
-          d3.select(this).attr("stroke", "#FF69B4").attr("stroke-width", 2);
-        } else {
-          d3.select(this).attr("stroke", "#green").attr("stroke-width", 2);
-        }
-      });
-
-    document.getElementById("addPointMsg").innerHTML = "Point Added";
+function onClickCircle4() {
+  let circle4 = document.getElementById("circle4");
+  if (circle4.style.stroke === "green") {
+    circle4.style.stroke = "pink";
+    circle4.style.strokeWidth = 0;
+  } else {
+    circle4.style.stroke = "green";
+    circle4.style.strokeWidth = 3;
   }
 }

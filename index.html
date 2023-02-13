@@ -4,15 +4,50 @@
     <meta charset="utf-8" />
     <title>hw-04</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://d3js.org/d3.v4.min.js"></script>
   </head>
 
   <body>
     <h1 class="centered">hw-04: Event Handling</h1>
     <div class="container">
       <div class="col1">
-        <svg width="500" height="400"></svg>
-        <script src="script.js"></script>
+        <svg class="frame" width="200" height="200">
+          <circle
+            id="circle1"
+            cx="20"
+            cy="160"
+            r="10"
+            onmouseover="mouseOverCircle1()"
+            onmouseout="mouseOutCircle1()"
+            onclick="onClickCircle1()"
+          />
+          <circle
+            id="circle2"
+            cx="40"
+            cy="120"
+            r="10"
+            onmouseover="mouseOverCircle2()"
+            onmouseout="mouseOutCircle2()"
+            onclick="onClickCircle2()"
+          />
+          <circle
+            id="circle3"
+            cx="120"
+            cy="160"
+            r="10"
+            onmouseover="mouseOverCircle3()"
+            onmouseout="mouseOutCircle3()"
+            onclick="onClickCircle3()"
+          />
+          <circle
+            id="circle4"
+            cx="180"
+            cy="20"
+            r="10"
+            onmouseover="mouseOverCircle4()"
+            onmouseout="mouseOutCircle4()"
+            onclick="onClickCircle4()"
+          />
+        </svg>
       </div>
       <div class="col2">
         <label for="xVal">Choose the x-coordinate you'd like to add:</label>
@@ -42,6 +77,10 @@
         </select>
         <br />
         <button onclick="addPoint()">Add Point</button>
+        <p id="lastPointClicked">
+          Last point clicked:
+          <br />
+        </p>
         <p id="addPointMsg"></p>
       </div>
     </div>
@@ -51,17 +90,14 @@
       <li>
         https://www.geeksforgeeks.org/how-to-define-two-column-layout-using-flexbox/
       </li>
-      <li>
-        https://www.tutorialsteacher.com/d3js/setup-d3js-development-environment
-      </li>
-      <li>
-        https://stackoverflow.com/questions/48141505/d3-selectrect-id-attry-returns-cannot-read-property-getattribute-of-nu
-      </li>
-      <li>
-        https://stackoverflow.com/questions/27169375/how-to-update-bound-data-in-d3-js
-      </li>
-      <li>https://gist.github.com/jfreels/6810705</li>
       <li>https://www.w3schools.com/tags/tag_select.asp</li>
+      <li>https://www.w3schools.com/css/css3_buttons.asp</li>
+      <li>
+        https://stackoverflow.com/questions/30565324/a-way-to-unclick-a-button-that-has-been-clicked-using-javascript
+      </li>
+      <li>https://www.w3schools.com/graphics/svg_circle.asp</li>
     </ul>
+
+    <script src="script.js"></script>
   </body>
 </html>
