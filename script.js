@@ -10,15 +10,14 @@ let dataset1 = [
 function mouseOverCircle(hovered_id) {
   let circle = document.getElementById(hovered_id);
   circle.style.fill = "blue";
-  
 }
 
 function mouseOutCircle(out_id) {
   let circle = document.getElementById(out_id);
   circle.style.fill = "pink";
-  
 }
 
+// onclick function
 function onClickCircle(clicked_id) {
   let circle = document.getElementById(clicked_id);
   let pointMsg = document.getElementById("lastPointClicked").innerHTML;
@@ -27,7 +26,7 @@ function onClickCircle(clicked_id) {
   x = (cx / 200) * 10;
 
   cy = circle.cy.baseVal.value;
-  y = 10 - ((cy / 200) * 10);
+  y = 10 - (cy / 200) * 10;
 
   let coord = "(" + x + ", " + y + ")\n\n";
 
@@ -40,7 +39,6 @@ function onClickCircle(clicked_id) {
     circle.style.strokeWidth = 3;
     document.getElementById("lastPointClicked").innerHTML = pointMsg + coord;
   }
-  
 }
 
 // finding the index of values in a given array
@@ -86,19 +84,18 @@ function addPoint() {
     newCircle.setAttribute("r", 10);
     newCircle.style.fill = "pink";
 
-    newCircle.onmouseover = function() {
+    newCircle.onmouseover = function () {
       mouseOverCircle(circleID);
     };
 
-    newCircle.onmouseout =  function() {
+    newCircle.onmouseout = function () {
       mouseOutCircle(circleID);
     };
 
-    newCircle.onclick = function() {
+    newCircle.onclick = function () {
       onClickCircle(circleID);
     };
 
     document.querySelector("svg").appendChild(newCircle);
-    console.log("appended");
   }
 }
