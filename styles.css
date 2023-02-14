@@ -20,7 +20,7 @@ body {
 }
 
 button {
-  background-color: palevioletred; /* Green */
+  background-color: palevioletred;
   border: none;
   color: white;
   padding: 10px 32px;
@@ -32,7 +32,7 @@ button {
   border-radius: 10px;
 }
 
-.frame {
+#frame {
   border-left: 5px solid black;
   border-bottom: 5px solid black;
   margin: 100px;

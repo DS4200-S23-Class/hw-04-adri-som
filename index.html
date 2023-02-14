@@ -9,8 +9,10 @@
   <body>
     <h1 class="centered">hw-04: Event Handling</h1>
     <div class="container">
+      <!-- 60% column -->
       <div class="col1">
-        <svg class="frame" width="200" height="200">
+        <!-- scatterplot -->
+        <svg id="frame" width="200" height="200">
           <circle
             id="circle1"
             cx="20"
@@ -49,7 +51,10 @@
           />
         </svg>
       </div>
+
+      <!-- 40% column -->
       <div class="col2">
+        <!-- dropdown for x value -->
         <label for="xVal">Choose the x-coordinate you'd like to add:</label>
         <select id="xVal">
           <option value="1">1</option>
@@ -63,6 +68,7 @@
           <option value="9">9</option>
         </select>
         <br />
+        <!-- dropdown for y value -->
         <label for="yVal">Choose the y-coordinate you'd like to add:</label>
         <select id="yVal">
           <option value="1">1</option>
@@ -76,9 +82,12 @@
           <option value="9">9</option>
         </select>
         <br />
-        <button onclick="addPoint()">Add Point</button>
+
+        <!-- button to add the point -->
+        <button type="button" onclick="addPoint()">Add Point</button>
+        <!-- text about the data points -->
         <p id="lastPointClicked">
-          Last point clicked:
+          Last points clicked:
           <br />
         </p>
         <p id="addPointMsg"></p>
@@ -96,6 +105,12 @@
         https://stackoverflow.com/questions/30565324/a-way-to-unclick-a-button-that-has-been-clicked-using-javascript
       </li>
       <li>https://www.w3schools.com/graphics/svg_circle.asp</li>
+      <li>
+        https://forum.freecodecamp.org/t/appended-element-is-visible-in-document-but-not-visible-visually/276141
+      </li>
+      <li>
+        http://www.java2s.com/example/javascript/dom-html-element/create-svg-element-and-make-circle.html
+      </li>
     </ul>
 
     <script src="script.js"></script>
